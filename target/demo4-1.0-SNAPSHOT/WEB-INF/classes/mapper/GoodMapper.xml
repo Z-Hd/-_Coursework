@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.GoodMapper">
+    <select id="findGoodByGid" resultType="domain.Good">
+        select * from demo.good_info where good_id=#{good_id}
+    </select>
+
+    <select id="findGoodByGname" resultType="domain.Good">
+        select * from demo.good_info where good_name=#{good_name}
+    </select>
+
+    <select id="findGoodByOwnerid" resultType="domain.Good">
+        select * from demo.good_info where owner_id=#{owner_id}
+    </select>
+
+    <select id="Buygood" parameterType="domain.Buy">
+        update demo.good_info set owner_id=#{owner_id} where good_id =#{good_id};
+    </select>
+    <select id="findAll" resultType="domain.Good">
+        select * from demo.good_info
+    </select>
+
+    <insert id="deliverNewGood" parameterType="domain.Good">
+        insert into demo.good_info values (DEFAULT , #{good_name}, #{good_sort}, #{good_price}, #{owner_id}, #{description}, #{img_path}, #{ifsaled});
+    </insert>
+
+    <update id="updateGood" parameterType="domain.Good">
+        update demo.good_info set good_name=#{good_name}, good_sort=#{good_sort}, good_price=#{good_price}, owner_id=#{owner_id}, description=#{description}, img_path=#{img_path}, ifsaled=#{ifsaled} where good_id =#{good_id};
+    </update>
+
+    <delete id="deleteGood">
+        delete from demo.good_info where good_id=#{good_id};
+    </delete>
+
+</mapper>

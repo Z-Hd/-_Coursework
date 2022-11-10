@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CollectionMapper">
+
+    <select id="findByUserId" resultType="domain.Collection">
+        select * from demo.collection_info where user_id=#{user_id}
+    </select>
+
+    <insert id="add" parameterType="domain.Collection">
+        insert into demo.collection_info (user_id, good_id, good_name,img_path,good_price, description) values (#{user_id}, #{good_id}, #{good_name}, #{img_path},#{good_price}, #{description})
+    </insert>
+
+</mapper>

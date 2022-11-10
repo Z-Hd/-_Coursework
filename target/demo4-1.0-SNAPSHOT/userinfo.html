@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>修改个人信息</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/7.css">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--导入布局js，共享header和footer-->
+    <script type="text/javascript" src="js/include.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        td, th {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="home">
+        <div class="content">
+            <div class="stars"></div>
+            <img class="icon" src="img/lace.png" alt="">
+            <div class="container" style="width: 400px;">
+                <br><br><br><br><br><br>
+                <h3 style="text-align: center;">修改个人信息</h3>
+                <form action="/demo4/UpdateUserServlet" method="post">
+            
+                    <div class="form-group">
+                        <label for="password">密码：</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="密码长度不超过10个字符">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="nickname">昵称：</label>
+                        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="请输入昵称">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="realname">真实姓名：</label>
+                        <input type="text" class="form-control" id="realname" name="realname" placeholder="请输入真实姓名">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="QQnumber">QQ：</label>
+                        <input type="text" class="form-control" id="QQnumber" name="QQnumber" placeholder="请输入真实姓名">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="address">地址：</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="请输入真实姓名">
+                    </div>
+            
+                    <div class="form-group" style="text-align: center">
+                        <input class="btn btn-primary" type="submit" value="提交"/>
+                        <input class="btn btn-default" type="reset" value="重置"/>
+                        <input class="btn btn-default" type="button" value="返回"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <audio autoplay="autoplay" id="audio" loop="loop">
+            <source src="video/back.mp3" type="audio/MP3">
+        </audio>
+        <img class="music_img" src="img/lace.png" alt="">
+    </div>
+
+</body>
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 2000);
+    }, false);
+</script>
+</html>

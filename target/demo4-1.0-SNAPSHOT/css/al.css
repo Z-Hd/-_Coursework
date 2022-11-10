@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.nav{
+	list-style: none;
+	margin: 100px auto 0;
+	padding-left: 20px;
+}
+a{
+	text-decoration: none;
+}
+.nav .list-item a{
+	font-size:30px;
+	float: left;
+	padding: 0 20px;
+	color: blueviolet;
+	line-height: 80px;
+	font-weight: bold;
+	height: 130px;
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+}
+.nav .list-item a:hover{
+	background-color: blueviolet;
+	color:#fff;
+}
+.nav .list-item a b{
+  	display: none;
+}
+.nav .list-item a:hover b{
+  	display: block;
+}
+.nav .list-item a:hover span{
+  	display: none;
+}
+.nav2{
+  	list-style: none;
+  	margin: 100px auto 0;
+  	border-bottom: 10px solid blueviolet;
+}

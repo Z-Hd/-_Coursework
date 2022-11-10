@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>管理员登录</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/solar.css" type="text/css">
+    <link rel="stylesheet" href="css/stars.css" type="text/css">
+    <script src="js/settings.js"></script>
+    <style>
+        audio {
+            position: fixed;
+            bottom: 50px;
+            right: 0;
+        }
+
+        .music_img {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 40px;
+            height: 30px;
+            animation: muscis 5s linear infinite;
+        }
+
+        @keyframes muscis {
+            from {
+                transform: rotate(0deg);
+                opacity: .6;
+            }
+            to {
+                transform: rotate(360deg);
+                opacity: .8;
+            }
+        }
+    </style>
+</head>
+<body class="enable-animations layout-column">
+    <audio autoplay="autoplay" id="audio" loop="loop">
+        <source src="video/deng.mp3" type="audio/MP3">
+    </audio>
+    <img class="music_img" src="img/lace.png" alt="">
+    <div class="space">
+        <div class="stars" id="stars"></div>
+        <div class="stars2" id="stars2"></div>
+        <div class="stars3" id="stars3"></div>
+        <div class="solar-syst" id="solar-syst">
+            <div class="sun"></div>
+            <div class="mercury"></div>
+            <div class="venus"></div>
+            <div class="earth"></div>
+            <div class="mars"></div>
+            <div class="jupiter"></div>
+            <div class="saturn"></div>
+            <div class="uranus"></div>
+            <div class="neptune"></div>
+            <div class="pluto"></div>
+            <div class="asteroids-belt"></div>
+        </div>
+    </div>
+    
+    <div id="login-frame">
+        <p id="image-logo"><img src="img/nl.png" style="width: 50px;height: 50px;"></p>
+        <p style="font-size:30px">管理员登录</p>
+        <form id="login-form" action="/demo4/AdLoginServlet" method="post">
+            <p>
+                <label class="label-input">用户名</label>
+                <input type="text" placeholder="请输入用户名" id="username" name="username" class="text-field" maxlength="20"/>
+            </p>
+            <p>
+                <label class="label-input">密码</label>
+                <input type="password" placeholder="请输入密码" id="password" name="password" class="text-field" maxlength="10"/>
+            </p>
+            
+            <div id="login-control">
+                <input align="center" type="submit" id="btn-login" value="登录"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        /*让背景图片拉伸且占据整个屏幕*/
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #login-frame {
+        /*让一个div块在整个屏幕居中*/
+        width: 400px;
+        height: 460px;
+        padding: 13px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /*其中的margin-left和margin-top最好是设为width和height的一半值，
+        那样是完全居中的效果，当然记得前面要加个负号*/
+        margin-left: -200px;
+        margin-top: -200px;
+        /*设置背景颜色且加透明效果*/
+        background-color: rgba(240, 255, 255, 0.5);
+        /*设置圆角*/
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /*让输入框和label对齐居中*/
+    form p > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #image-logo {
+        margin-top: 22px;
+    }
+
+    .label-input {
+        font-size: 14px;
+        font-family: 宋体;
+
+        width: 65px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+
+        color: white;
+        background-color: rgba(108, 8, 10, 0.8);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .zinput {
+        width: 278px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+
+        color: grey;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: white;
+    }
+
+    .text-field {
+        width: 278px;
+        height: 40px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 0;
+    }
+
+    #btn-login {
+        font-size: 14px;
+        font-family: 宋体;
+        /*给一个label或者button里面的文字设置居中*/
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+
+        color: white;
+        background-color: rgba(108, 8, 10, 0.8);
+        border-radius: 6px;
+        border: 0;
+
+        float: left;
+    }
+
+    #forget-pwd {
+        font-size: 12px;
+        color: black;
+        /*去除链接的下划线*/
+        text-decoration: none;
+        position: relative;
+        float: right;
+        top: 5px;
+
+    }
+
+    #forget-pwd:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    #login-control {
+        padding: 50px 0 0 140px;
+    }
+
+    .my {
+        color: black;
+        font-size: 20px;
+        font-family: "仿宋";
+        font-weight: bold;
+    }
+</style>

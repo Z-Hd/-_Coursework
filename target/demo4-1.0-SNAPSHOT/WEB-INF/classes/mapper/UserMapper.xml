@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+
+    <delete id="delete" parameterType="int">
+        delete from demo.user_info where user_id=#{user_id};
+    </delete>
+
+    <insert id="register" parameterType="domain.User">
+        insert into demo.user_info (user_id, user_name, nick_name, real_name, QQ_number, address, credit, ifsealed, ifadmin, password) values (DEFAULT, #{user_name}, #{nick_name}, #{real_name}, #{QQ_number}, #{address}, #{credit}, #{ifsealed} ,#{ifadmin} , #{password});
+    </insert>
+
+    <select id="findAll" resultType="domain.User">
+        select * from demo.user_info
+    </select>
+
+    <select id="findUserByUsernameAndPassword" resultType="domain.User" parameterType="domain.User">
+        select * from demo.user_info where user_name = #{user_name} and password = #{password}
+    </select>
+
+    <select id="findById" resultType="domain.User">
+        select * from demo.user_info where user_id = #{user_id}
+    </select>
+    <select id="findUserByAdUsernameAndPassword" resultType="domain.User">
+        select * from demo.user_info where user_name = #{user_name} and password = #{password} and ifadmin = true
+    </select>
+    <select id="findByUsername" resultType="domain.User">
+        select * from demo.user_info where user_name = #{user_name}
+    </select>
+    <select id="isExist" resultType="java.lang.Integer">
+        select count(*) from demo.user_info where user_name = #{user_name}
+    </select>
+
+
+    <update id="update" parameterType="domain.User">
+        update demo.user_info set nick_name=#{nick_name}, real_name=#{real_name}, QQ_number=#{QQ_number}, address=#{address}, password=#{password} where user_id =#{user_id};
+    </update>
+
+</mapper>
